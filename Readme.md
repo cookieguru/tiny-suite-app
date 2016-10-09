@@ -1,3 +1,3 @@
-# Tiny Home App
+# Tiny Suite App
 
-Tabris.js app for Tiny Home APIs
+Tabris.js app for Tiny Suite APIs
