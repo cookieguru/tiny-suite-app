@@ -68,7 +68,18 @@ button.on('select', function() {
 		var max = Math.min(1000, json.results.length);
 		var start = json.results.length - max;
 		for(var i = start; i < start + max; i++) {
-			chartData.labels.unshift(json.results[i].created_at);
+			if (i % 4 === 0) {
+				var dateFromTimeStamp = new Date(json.results[i].timestamp);
+				var hours = dateFromTimeStamp.getHours()+"";
+				var minutes = dateFromTimeStamp.getMinutes()+"";
+				var seconds = dateFromTimeStamp.getSeconds()+"";
+				hours = (hours).length === 1 ? "0"+hours : hours;
+				minutes = (minutes).length === 1 ? "0"+minutes : minutes;
+				seconds = (seconds).length === 1 ? "0"+seconds : seconds;
+				chartData.labels.unshift(hours+":"+minutes+":"+seconds);
+			} else {
+				chartData.labels.unshift("");
+			}
 			chartData.datasets[0].data.unshift(json.results[i].value);
 		}
 
