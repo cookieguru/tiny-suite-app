@@ -12,5 +12,6 @@ new tabris.TextView({
 require('./pages/weather.js');
 require('./pages/logs.js');
 require('./pages/about.js');
+require('./pages/home.js');
 
 tabris.ui.children('Page')[0].open();
