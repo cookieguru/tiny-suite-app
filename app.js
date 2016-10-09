@@ -6,7 +6,7 @@ new tabris.PageSelector({
 
 new tabris.TextView({
 	layoutData: {centerX: 0, bottom: 0},
-	text: 'Version 1.0.0 / ' + tabris.version
+	text: 'Version 1.0.1 / ' + tabris.version
 }).appendTo(drawer);
 
 require('./pages/weather.js');

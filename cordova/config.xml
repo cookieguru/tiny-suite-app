@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.timbond.tinyhome" version="1.0.0">
+<widget id="com.timbond.tinyhome" version="1.0.1">
 	<name>Tiny Suite</name>
 	<description>Tabris.js app for Tiny Suite APIs</description>
 	<author email="apps@tim-bond.com" href="http://www.tim-bond.com.com/">Tim Bond</author>
