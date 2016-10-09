@@ -1,5 +1,5 @@
 {
-  "name": "tiny-home-app",
+  "name": "tiny-suite-app",
   "description": "Tabris.js app for Tiny Suite APIs",
   "main": "app.js",
   "dependencies": {
@@ -9,6 +9,6 @@
   "license" : "MIT",
   "repository": {
 	"type" : "git",
-	"url" : "https://github.com/cookieguru/tiny-home-app.git"
+	"url" : "https://github.com/cookieguru/tiny-suite-app.git"
   }
 }
