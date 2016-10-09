@@ -1,6 +1,6 @@
 {
   "name": "tiny-home-app",
-  "description": "Tabris.js app for Tiny Home APIs",
+  "description": "Tabris.js app for Tiny Suite APIs",
   "main": "app.js",
   "dependencies": {
 	"chart.js": "1.0.1",

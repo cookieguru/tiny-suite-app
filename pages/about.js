@@ -7,7 +7,7 @@ var page = new tabris.Page({
 
 new tabris.TextView({
 	layoutData: { top: MARGIN, left: MARGIN, right: MARGIN },
-	text: 'App to demonstrate the Tiny Home project for the Seattle Interactive IOT Hackathon - Tiny Home & Automotive'
+	text: 'App to demonstrate the Tiny Suite project for the Seattle Interactive IOT Hackathon - Tiny Home & Automotive'
 }).appendTo(page);
 
 new tabris.TextView({
