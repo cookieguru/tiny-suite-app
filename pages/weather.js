@@ -2,20 +2,15 @@ var page = new tabris.Page({
 	title: 'Weather',
 	topLevel: true
 });
-
-
-var tabFolder = new tabris.TabFolder({
-	left: 0, top: 0, right: 0, bottom: 0,
-	paging: true
+var scrollView = new tabris.ScrollView({
+	layoutData: { top: 0, left: 0, right: 0, bottom: 0 }
 }).appendTo(page);
 
-var forecastTab = new tabris.Tab({
-	title: 'Forecast'
-}).appendTo(tabFolder);
-
-var forecast = new tabris.ScrollView({
-	layoutData: { top: 0, left: 0, right: 0, bottom: 0 }
-}).appendTo(forecastTab);
+var activityIndicator = new tabris.ActivityIndicator({
+	visible: true,
+	centerX: 0,
+	centerY: 0
+}).appendTo(page);
 
 fetch('http://api.openweathermap.org/data/2.5/forecast?q=Seattle&APPID=c9fe82bb94d0e335f9f3fd7dbfd48a30&units=imperial').then(function(response) {
 	return response.json();
@@ -24,12 +19,12 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Seattle&APPID=c9fe82bb9
 		layoutData: { top: ['prev()', 0], left: 0, right: 0 },
 		markupEnabled: true,
 		text: '<b>Forecast for ' + json.city.name + '</b>'
-	}).appendTo(forecast);
+	}).appendTo(scrollView);
 	for(var i = 0; i < json.list.length; i++) {
 		var item = json.list[i];
 		var composite = new tabris.Composite({
 			layoutData: { top: ['prev()', 10], left: 0, right: 0 }
-		}).appendTo(forecast);
+		}).appendTo(scrollView);
 		new tabris.TextView({
 			layoutData: { top: 0, left: 0 },
 			text: friendlyTimestamp(item.dt)
@@ -55,20 +50,18 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Seattle&APPID=c9fe82bb9
 			}
 		}).appendTo(composite);
 	}
+	activityIndicator.dispose();
 }).catch(function(err) {
 	new tabris.TextView({
 		layoutData: { top: 0, left: 0, right: 0 },
 		text: err
-	}).appendTo(forecast);
+	}).appendTo(scrollView);
+	activityIndicator.dispose();
 });
-
-var actualTab = new tabris.Tab({
-	title: 'Actual'
-}).appendTo(tabFolder);
 
 function friendlyTimestamp(timestamp) {
 	var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-	var months = ['January', 'February', 'March', 'Apri', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+	var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 	var offset = new Date().getTimezoneOffset() * 60 * 1000;
 
@@ -85,5 +78,3 @@ function friendlyTimestamp(timestamp) {
 function ucfirst(string) {
 	return string.charAt(0).toUpperCase() + string.slice(1);
 }
-
-module.exports = page;
