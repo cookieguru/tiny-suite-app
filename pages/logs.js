@@ -68,8 +68,8 @@ button.on('select', function() {
 		var max = Math.min(1000, json.results.length);
 		var start = json.results.length - max;
 		for(var i = start; i < start + max; i++) {
-			chartData.labels.push(json.results[i].created_at);
-			chartData.datasets[0].data.push(json.results[i].value);
+			chartData.labels.unshift(json.results[i].created_at);
+			chartData.datasets[0].data.unshift(json.results[i].value);
 		}
 
 		var ctx = createCanvasContext();
