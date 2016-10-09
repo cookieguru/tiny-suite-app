@@ -10,6 +10,7 @@ new tabris.TextView({
 }).appendTo(drawer);
 
 require('./pages/weather.js');
+require('./pages/logs.js');
 require('./pages/about.js');
 
 tabris.ui.children('Page')[0].open();
