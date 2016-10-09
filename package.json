@@ -1,0 +1,13 @@
+{
+  "name": "tiny-home-app",
+  "description": "Tabris.js app for Tiny Home APIs",
+  "main": "app.js",
+  "dependencies": {
+	"tabris": "^1.9.0"
+  },
+  "license" : "MIT",
+  "repository": {
+	"type" : "git",
+	"url" : "https://github.com/cookieguru/tiny-home-app.git"
+  }
+}

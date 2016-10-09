@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.timbond.barcodepusher" version="1.0.2">
+	<name>Tiny Home</name>
+	<description>Tabris.js app for Tiny Home APIs</description>
+	<author email="apps@tim-bond.com" href="http://www.tim-bond.com.com/">Tim Bond</author>
+
+	<platform name="ios">
+	</platform>
+
+	<platform name="android">
+	</platform>
+</widget>
